@@ -1,0 +1,29 @@
+<h1>Index</h1>
+
+<table>
+  
+  <tr>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Softness</td>
+    <td>Cuteness</td>
+    <td colspan="3">Actions</td>
+  </tr>
+  
+  <% @kittens.each do |kitten| %>
+  
+    <tr>
+      <td><%= kitten.name %></td>
+      <td><%= kitten.age %></td>
+      <td><%= kitten.cuteness %></td>
+      <td><%= kitten.softness %></td>
+      <td><%= link_to 'Show', kitten %></td>
+      <td><%= link_to 'Edit', edit_kitten_path(kitten) %></td>
+      <td><%= link_to 'Delete', kitten, method: :delete %></td>
+    </tr>
+  
+  <% end %>
+  
+</table>
+
+<p><%= link_to 'New', new_kitten_path %></p>
